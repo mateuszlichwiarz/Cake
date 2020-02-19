@@ -2,11 +2,15 @@
 
 namespace App\Controller;
 
+use Cake\ORM\TableRegistry;
+
 class ManController extends AppController
 {
 	public function index()
 	{
-		$man = $this->Man->find();
+		$table = TableRegistry::getTableLocator()->get('man');
+		$man = $table->find();
+
 		$this->set(compact('man'));
 	}
 
