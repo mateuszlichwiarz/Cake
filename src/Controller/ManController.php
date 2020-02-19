@@ -6,17 +6,12 @@ class ManController extends AppController
 {
 	public function index()
 	{
-		$man = array();
-		$man['name'] = 'Mateusz';
-		$man['weight'] = '80';
-		$man['energy'] = '80';
-		$man['famine'] = '5';
-
+		$man = $this->Man->find();
 		$this->set(compact('man'));
 	}
 
 	public function newMan()
-	{	
+	{
 		$man = $this->Man->newEmptyEntity();
 		if($this->request->is('post')) {
 			$man = $this->Man->patchEntity($man, $this->request->getData());
