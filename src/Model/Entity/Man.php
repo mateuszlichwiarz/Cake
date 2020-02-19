@@ -7,6 +7,7 @@ use Cake\ORM\Entity;
 class Man extends Entity
 {
 	protected $_accessible = [
-		'*' => true.
+		'*' => true,
+		'id' => false,
 	];
 }

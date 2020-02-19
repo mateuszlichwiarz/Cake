@@ -16,19 +16,12 @@ class ManController extends AppController
 	}
 
 	public function newMan()
-	{
-		$this->loadComponent('Flash');
-		
-		$man = $this->Mans->newEmptyEntity();
+	{	
+		$man = $this->Man->newEmptyEntity();
 		if($this->request->is('post')) {
-			$man = $this->Mans->patchEntity($man, $this->request->getData());
-			$man->name = 'John';
-			$man->weight = '80';
-			$man->energy = '100';
-			$man->famine = '0';
+			$man = $this->Man->patchEntity($man, $this->request->getData());
 
-		if($this->Mans->save($man)){
-			$this->Flash->success(__('Man saved'));
+		if($this->Man->save($man)) {
 			return $this->redirect(['action' => 'index']);
 		}
 		$this->Flash->error(__('Unable to create your human.'));
