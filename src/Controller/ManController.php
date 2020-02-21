@@ -8,10 +8,7 @@ class ManController extends AppController
 {
 	public function index()
 	{
-		$table = TableRegistry::getTableLocator()->get('man');
-		$man = $table->find();
-
-		$this->set(compact('man'));
+		
 	}
 
 	public function newMan()
