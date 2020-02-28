@@ -1,5 +1,8 @@
 <?php
 
+// IMPORTANT
+// only my ideas, not working
+// ALL TO REFACTORING
 namespace App\Human;
 
 class EaterClass
