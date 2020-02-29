@@ -17,6 +17,12 @@ class CalculateEating
 		return $this->firstDate;
 	}
 
+	public function setCurrentDate()
+	{
+		$date = date("Y-m-d");
+		$this->currentDate = $date;
+	}
+
 	public function setFirstDate($date)
 	{
 		$this->firstDate = $date;
