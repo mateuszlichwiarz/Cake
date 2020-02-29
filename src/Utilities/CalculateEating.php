@@ -35,11 +35,11 @@ class CalculateEating
 
 	public function countHours()
 	{
-		$lastLoggedDate = $this->createDate;
+		$lastLoggedDate = $this->lastLoggedDate;
 
 		$currentDate = $this->currentDate;
 
-		$result = round((strtotime($tomorrow)-strtotime($today))/86400);
+		$result = round((strtotime($currentDate)-strtotime($lastLoggedDate))/86400);
 
 		return $result;
 	}
