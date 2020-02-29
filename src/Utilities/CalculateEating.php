@@ -3,24 +3,28 @@
 // IMPORTANT
 // only my ideas, not working
 // ALL TO REFACTORING
-namespace App\Time;
+namespace App\Utilities;
 
-trait CalculateEating
+class CalculateEating
 {
 	//date of create human 
 	private $firstDate;
 	private $lastLoggedDate;
 	private $currentDate;
 
-	public function setFirstDate($firstDate)
+	public function getFirstDate()
 	{
-		$this->firstDate;
-		return $this;
+		return $this->firstDate;
 	}
 
-	public function setLastLoggedDate($loggedDate)
+	public function setFirstDate($date)
 	{
-		$this->lastLoggedDate;
+		$this->firstDate = $date;
+	}
+
+	public function setLastLoggedDate($date)
+	{
+		$this->lastLoggedDate = $date;
 	}
 
 	public function countHours()
