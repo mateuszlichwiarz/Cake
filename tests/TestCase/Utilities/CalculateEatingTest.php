@@ -17,4 +17,16 @@ class CalculateEatingTest extends TestCase
 		$result = $calculate->getFirstDate();
 		$this->assertEquals('2011-11-11', $result);
 	}
+
+	public function testCountHours(): void
+	{
+		$date = '2020-02-26';
+
+		$calculate = new CalculateEating();
+		$calculate->setCurrentDate();
+		$calculate->setLastLoggedDate($date);
+
+		$result = $calculate->countHours();
+		$this->assertEquals('3', $result);
+	}
 }
