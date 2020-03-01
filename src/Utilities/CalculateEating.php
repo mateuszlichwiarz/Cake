@@ -5,41 +5,37 @@
 // ALL TO REFACTORING
 namespace App\Utilities;
 
-class CalculateEating
+trait CalculateTime
 {
 	private $period; //period, please in seconds e.g minute == 60, hour == 3600 etc. 
 	private $seconds;
 
-	public function getFirstDate()
+	public abstract function setToDate(string $date): string;
+	public abstract function setFromDate(string $date): string;
+
+	public function setPeriod(int $period): int
 	{
-		return $this->firstDate;
+		$this->period = $period;
 	}
 
-	public function setCurrentDate()
+	private function getTimeSets(): int
 	{
-		$date = date("Y-m-d");
-		$this->currentDate = $date;
+		$seconds = $this->seconds;
+		$period  = $this->period;
+
+		return $timeSets = $;
 	}
 
-	public function setFirstDate($date)
+	public function countTimeSets(): int
 	{
-		$this->firstDate = $date;
-	}
+		$fromDate = $this->fromDate;
+		$toDate   = $this->toDate;
 
-	public function setLastLoggedDate($date)
-	{
-		$this->lastLoggedDate = $date;
-	}
+		$seconds = round(strtotime($toDate)-strtotime($fromDate));
 
-	public function countHours()
-	{
-		$lastLoggedDate = $this->lastLoggedDate;
+		$timeSets = $this->getTimeSets();
 
-		$currentDate = $this->currentDate;
-
-		$result = round((strtotime($currentDate)-strtotime($lastLoggedDate))/86400);
-
-		return $result;
+		return $timeSets;
 	}
 		//MAIN FUNCTIONALITY
 		//po odpaleniu aplikacji dodawać wszystkie dni od ostatniego odpalenia i sumować akcje na nich n.p dodawanie oraz odejmowanie wartości z famine lub energy.
