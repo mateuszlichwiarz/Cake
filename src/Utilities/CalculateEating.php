@@ -7,10 +7,8 @@ namespace App\Utilities;
 
 class CalculateEating
 {
-	//date of create human 
-	private $firstDate;
-	private $lastLoggedDate;
-	private $currentDate;
+	private $period; //period, please in seconds e.g minute == 60, hour == 3600 etc. 
+	private $seconds;
 
 	public function getFirstDate()
 	{
