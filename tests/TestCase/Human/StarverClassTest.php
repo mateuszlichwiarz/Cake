@@ -11,9 +11,12 @@ class StarverClassTest extends TestCase
 	{
 		$starver = new StarverClass;
 		$starver->setFamine(2);
+		$starver->setStarvation(0.15);
 
 		$result = $starver->addFamine();
 
-		$this->assertEquals('240', $result);
+		$property = 240*0.15;
+
+		$this->assertEquals($property, $result);
 	}
 }
