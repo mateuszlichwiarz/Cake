@@ -1,6 +1,6 @@
 New project!
 
-Simple Game with more advanced backend.
+Simple game with more advanced backend.
 
 Taking care of hero. Complex activities.
 
