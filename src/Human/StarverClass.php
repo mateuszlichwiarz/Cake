@@ -5,10 +5,12 @@
 // ALL TO REFACTORING
 namespace App\Human;
 
-use App\TimeClass;
+use App\Utilities\CalculateTime;
 
 class StarverClass
 {
+	use CalculateTime;
+	
 	private $id;
 	private $name;
 	private $energy;
