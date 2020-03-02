@@ -15,11 +15,10 @@ class StarverClass
 	private $name;
 	private $energy;
 	private $famine;
+	private $starvation;
 
 	private $fromDate;
 	private $toDate;
-
-	private static $period;
 	
 	public function __construct()
 	{
@@ -44,13 +43,16 @@ class StarverClass
 
 	public function addFamine()
 	{
-		$timeSets  = $this->countTimeSets(30);
+		$timeSets = $this->countTimeSets(30);
+		$starvation = $this->starvation;
 
-		return $timeSets;
+		$famine = $timeSets*$starvation;
+
+		return $famine;
 	}
 
-	private function setStarvation(int $starvation)
+	public function setStarvation($starvation)
 	{
-		return $famine += $starvation;
+		$this->starvation = $starvation;
 	}
 }
