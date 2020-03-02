@@ -16,18 +16,41 @@ class StarverClass
 	private $energy;
 	private $famine;
 
-	public function main()
-	{
-		$currentHour = date('H');
-		$futureHour = $currentHour('H') + 1;
+	private $fromDate;
+	private $toDate;
 
-		if($currentHour == $futureHour){
-			return $famine = $this->starvation();
-		}
+	private static $period;
+	
+	public function __construct()
+	{
+		$this->setToDate(  '2020-02-28 22:00:00');
+		$this->setFromDate('2020-02-28 20:00:00');
+	}
+	
+	public function setToDate(string $date)
+	{
+		$this->toDate = $date;
 	}
 
-	public function starvation()
+	public function setFromDate(string $date)
 	{
-		return $famine += 25;
+		$this->fromDate = $date;
+	}
+
+	public function setFamine(int $famine)
+	{
+		$this->famine = $famine;
+	}
+
+	public function addFamine()
+	{
+		$timeSets  = $this->countTimeSets(30);
+
+		return $timeSets;
+	}
+
+	private function setStarvation(int $starvation)
+	{
+		return $famine += $starvation;
 	}
 }
