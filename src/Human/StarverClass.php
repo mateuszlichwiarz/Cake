@@ -24,6 +24,14 @@ class StarverClass extends AbstractHuman
 		$this->setFromDate('2020-02-28 20:00:00');
 	}
 	
+	public function getStatus()
+	{
+		$name = $this->getName();
+		$energy = $this->getEnergy();
+		$status = $name.' - '.$energy.' energy lvl';
+		return $this->status;
+	}
+
 	public function setToDate(string $date)
 	{
 		$this->toDate = $date;
