@@ -5,21 +5,29 @@
 // ALL TO REFACTORING
 namespace App\Human;
 
-class EaterClass
+use App\Human\AbstractHuman;
+
+class EaterClass extends AbstractHuman
 {
 	private $id;
-	private $name;
-	private $famine;
-	private $energy;
 
 	public function feed()
 	{
-		$famine -= 25;
+		$famine = $this->getFamine();
+		 $famine-= 25;
 
-		if($famine >= 0){
+		if($famine <= 0){
 			return $famine = 0;
 		}else{
 			return $famine;
 		}
+	}
+
+	public function getStatus()
+	{
+		$name = $this->name;
+		$famine = $this->famine;
+
+		return $name.' - '.$famine.' famine lvl';	
 	}
 }
