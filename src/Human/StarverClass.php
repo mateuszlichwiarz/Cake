@@ -6,15 +6,13 @@
 namespace App\Human;
 
 use App\Utilities\CalculateTime;
+use App\Human\AbstractHuman;
 
-class StarverClass
+class StarverClass extends AbstractHuman
 {
 	use CalculateTime;
 	
 	private $id;
-	private $name;
-	private $energy;
-	private $famine;
 	private $starvation;
 
 	private $fromDate;
