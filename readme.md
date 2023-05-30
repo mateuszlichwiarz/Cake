@@ -1,2 +1,2 @@
 CakePHP
-Learning only
+for fun
